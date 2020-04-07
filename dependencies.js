@@ -1,0 +1,2 @@
+// CONFIGS
+import './config/ReactotronConfig';

@@ -1,9 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import HomeScreen from './pages/HomeScreen';
-import LoginScreen from './pages/LoginScreen';
-import PerfilScreen from './pages/PerfilScreen';
+import HomeScreen from '../pages/HomeScreen';
+import LoginScreen from '../pages/LoginScreen';
+import PerfilScreen from '../pages/PerfilScreen';
 
 const MainTab = createBottomTabNavigator();
 export const RootStack = createStackNavigator();

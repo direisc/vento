@@ -1,7 +1,6 @@
 import { produce } from 'immer';
-import { AnyAction } from 'redux';
 
-import { AuthTypes } from './types';
+import Types from './types';
 
 const initialState = {
   authenticated: false,
@@ -10,33 +9,33 @@ const initialState = {
   token: null,
 };
 
-export default function reducer(state = initialState, action: AnyAction) {
-  return produce(state, (draft) => {
+export default function reducer(state = initialState, action) {
+  return produce(state, draft => {
     switch (action.type) {
-      case AuthTypes.SIGNIN_SUCCESS:
+      case Types.SIGNIN_SUCCESS:
         draft.authenticated = true;
         draft.skipped = false;
         draft.user = { ...draft.user, ...action.payload.user };
         draft.token = action.payload.token;
         break;
-      case AuthTypes.SIGNOUT:
+      case Types.SIGNOUT:
         draft.authenticated = false;
         draft.skipped = false;
         draft.user = {};
         draft.token = null;
         break;
-      case AuthTypes.SKIP_SIGNIN:
+      case Types.SKIP_SIGNIN:
         draft.authenticated = false;
         draft.skipped = true;
         draft.user = {};
         break;
-      case AuthTypes.SIGNIN_BY_REGISTER:
+      case Types.SIGNIN_BY_REGISTER:
         draft.authenticated = false;
         draft.skipped = false;
         draft.user = { ...draft.user, ...action.payload.user };
         draft.token = action.payload.token;
         break;
-      case AuthTypes.SET_AUTHENTICATED:
+      case Types.SET_AUTHENTICATED:
         draft.authenticated = action.payload.authenticated;
         break;
       default:

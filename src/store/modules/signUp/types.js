@@ -1,0 +1,5 @@
+export default {
+  SET_USER: '@signUp/SET_USER',
+  CREATE_USER_REQUEST: '@signUp/CREATE_USER_REQUEST',
+  CREATE_USER_SUCCESS: '@signUp/CREATE_USER_SUCCESS',
+};
